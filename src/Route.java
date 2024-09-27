@@ -22,33 +22,53 @@ public class Route {
         }
     }
 
+
+    //PRINT FUNCTIONS
     public void printConnectMat() {
+        int counter = 0;
+
         System.out.print("\n\n  ");
         for (Airport a : map.getAirports()){
-            System.out.print(" " + a.getId());
+            if(counter > 8){
+                System.out.print("  " + a.getId());
+            } else{
+                System.out.print("   " + a.getId());
+            }
+            counter++;
         }
         System.out.println();
         
         for (int i = 0; i < map.getAirports().size(); i++){
-            System.out.print(map.getAirports().get(i).getId() + "[");
+            if(i > 8){
+                System.out.print(map.getAirports().get(i).getId() + "[");
+            } else{
+                System.out.print(map.getAirports().get(i).getId() + " [");
+            }
+
             for(int j = 0; j < map.getAirports().size(); j++){
                 if(connections[i][j] > 0){
-                    System.out.print(" " + ANSI_GREEN + connections[i][j] + ANSI_RESET + " ");
+                    System.out.print("  " + ANSI_PURPLE_BACKGROUND + ANSI_BLACK + connections[i][j] + ANSI_RESET + "  ");
                 } else{
-                    System.out.print(" " + connections[i][j] + " ");
+                    System.out.print("  " + connections[i][j] + "  ");
                 }  
             }
             System.out.println("]");
         }
     }
 
-    //PRINT FUNCTIONS
     public void printInfo() {
-        System.out.println("Route Name: " + name);
-        System.out.println("Steps:");
+        System.out.println("\n\n----------------" + getName().toUpperCase() + "----------------");
+        System.out.print("\n » STEPS          |" );
+        
+        System.out.print(ANSI_CYAN);    
         for (Edge e : steps) {
             e.printInfo();
+            System.out.print(" ");
         }
+        System.out.print(ANSI_RESET);
+
+        System.out.println("\n\n » TOTAL DISTANCE | " + ANSI_BLUE + sumDistance() + "km" + ANSI_RESET );
+        System.out.println("\n--------------------------------------------------------\n\n");
     }
 
     //CONNETCT FUNCTIONS
@@ -70,6 +90,14 @@ public class Route {
             }
         }
         return tempAirport;
+    }
+
+    public int sumDistance(){
+        int sum = 0;
+        for (Edge e : steps) {
+            sum += e.getDistance();
+        }
+        return sum;
     }
     
 

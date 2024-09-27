@@ -29,15 +29,38 @@ public class App {
         // Vitoria = a27
 
 
-        Route r1 = new Route("Route 1");
-        r1.addStep(100, "sao paulo", "belem");
-        r1.addStep(100, "belem", "Cuiaba");
-        r1.addStep(100, "Cuiaba", "Joao Pessoa");
-        r1.addStep(100, "Joao Pessoa", "sao paulo");
-
-        r1.printInfo();
+        // Primeira rota
+        Route r1 = new Route("Route-1");
+        r1.addStep(1015, "sao paulo", "belem");
+        r1.addStep(2853, "belem", "Cuiaba");
+        r1.addStep(2676, "Cuiaba", "Joao Pessoa");
+        r1.addStep(2794, "Joao Pessoa", "sao paulo");
 
         r1.printConnectMat();
+        r1.printInfo();
+
+        // Segunda rota
+        Route r2 = new Route("Route-2");
+        r2.addStep(870, "curitiba", "florianopolis");
+        r2.addStep(1254, "florianopolis", "porto alegre");
+        r2.addStep(2327, "porto alegre", "salvador");
+        r2.addStep(1443, "salvador", "curitiba");
+
+        r2.printConnectMat();
+        r2.printInfo();
+
+        // Terceira rota
+        Route r3 = new Route("Route-3");
+        r3.addStep(1578, "manaus", "fortaleza");
+        r3.addStep(1407, "fortaleza", "natal");
+        r3.addStep(1210, "natal", "brasilia");
+        r3.addStep(2090, "brasilia", "manaus");
+
+        r3.printConnectMat();
+        r3.printInfo();
+
+
+        
 
 
 
