@@ -75,15 +75,10 @@ public class Route {
     public void addStep(int distance, String source, String target) {
         Airport tempSource = findAirport(source);
         Airport tempTarget = findAirport(target);
-
-        if (tempSource.equals(tempTarget)) {
-            System.out.println("Source cant be equal target");
-            return;
-        }
-
+    
         steps.add(new Edge(distance, tempSource, tempTarget));
-
-        connections[map.getAirports().indexOf(tempSource)][map.getAirports().indexOf(tempTarget)] = connections[map.getAirports().indexOf(tempSource)][map.getAirports().indexOf(tempTarget)] + 1;
+    
+        connections[map.getAirports().indexOf(tempSource)][map.getAirports().indexOf(tempTarget)] = distance;
     }
 
     public Airport findAirport(String airport) {
