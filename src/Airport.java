@@ -7,6 +7,7 @@ public class Airport {
     private ArrayList<Airport> leaving;
     public Airport(String name, String id) {
         this.name = name;
+        this.id = id;
         this.entering = new ArrayList<Airport>();
         this.leaving = new ArrayList<Airport>();
     }
