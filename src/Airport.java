@@ -2,9 +2,10 @@ import java.util.ArrayList;
 
 public class Airport {
     private String name;
+    private String id;
     private ArrayList<Airport> entering;
     private ArrayList<Airport> leaving;
-    public Airport(String name) {
+    public Airport(String name, String id) {
         this.name = name;
         this.entering = new ArrayList<Airport>();
         this.leaving = new ArrayList<Airport>();
@@ -51,6 +52,12 @@ public class Airport {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
     public ArrayList<Airport> getEntering() {
         return entering;
