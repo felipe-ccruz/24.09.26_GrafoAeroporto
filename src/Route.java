@@ -76,6 +76,11 @@ public class Route {
         Airport tempSource = findAirport(source);
         Airport tempTarget = findAirport(target);
 
+        if (tempSource.equals(tempTarget)) {
+            System.out.println("Source cant be equal target");
+            return;
+        }
+
         steps.add(new Edge(distance, tempSource, tempTarget));
 
         connections[map.getAirports().indexOf(tempSource)][map.getAirports().indexOf(tempTarget)] = connections[map.getAirports().indexOf(tempSource)][map.getAirports().indexOf(tempTarget)] + 1;
