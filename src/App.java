@@ -23,6 +23,8 @@ public class App {
         Edge e3 = new Edge(200, a1, a3); // Distância entre Manaus e Macapa
         Edge e4 = new Edge(100, a3, a5); // Distância entre macapa e Rio Branco
 
+        // Edge e5 = new Edge(300, a1, a4); // Distância entre Manaus e Boa Vista
+
 
 
         // Lista de arestas
@@ -31,6 +33,7 @@ public class App {
         edges.add(e2);
         edges.add(e3);
         edges.add(e4);
+        // edges.add(e5);
 
 
 
