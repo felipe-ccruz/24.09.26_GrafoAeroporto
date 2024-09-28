@@ -12,9 +12,9 @@ public class FloydWarshall {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == j) {
-                    dist[i][j] = 0;  // A distância de uma cidade para ela mesma é zero
+                    dist[i][j] = 0;  
                 } else {
-                    dist[i][j] = INF;  // Inicialmente, não há caminho entre os nós
+                    dist[i][j] = INF;  
                 }
             }
         }
