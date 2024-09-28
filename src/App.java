@@ -23,7 +23,19 @@ public class App {
         Edge e3 = new Edge(200, a1, a3); // Distância entre Manaus e Macapa
         Edge e4 = new Edge(100, a3, a5); // Distância entre macapa e Rio Branco
 
-        // Edge e5 = new Edge(300, a1, a4); // Distância entre Manaus e Boa Vista
+        Edge e5 = new Edge(300, a1, a4); // Distância entre Manaus e Boa Vista
+        Edge e6 = new Edge(200, a4, a5); // Distância entre Boa Vista e Rio Branco
+        
+        Edge e7 = new Edge(100, a5, a1); // Distância entre Rio Branco e Manaus
+        Edge e8 = new Edge(400, a2, a3); // Distância entre Belém e Macapa
+
+        Edge e9 = new Edge(200, a4, a3); // Distância entre Boa Vista e  Macapa
+        Edge e10 = new Edge(100, a2, a4); // Distância entre Belém e Boa Vista
+        
+        Edge e11 = new Edge(300, a2, a4); // Distância entre Belém e Boa Vista
+        Edge e12 = new Edge(100, a1, a3); // Distância entre Manaus e Macapa
+
+        
 
 
 
@@ -33,8 +45,14 @@ public class App {
         edges.add(e2);
         edges.add(e3);
         edges.add(e4);
-        // edges.add(e5);
-
+        edges.add(e5);
+        edges.add(e6);
+        edges.add(e7);
+        edges.add(e8);
+        edges.add(e9);
+        edges.add(e10);
+        edges.add(e11);
+        edges.add(e12);
 
 
 
