@@ -25,6 +25,33 @@ public class FloydWarshall {
             int v = airports.indexOf(edge.target);
             dist[u][v] = edge.distance;
         }
+
+        // DISTANCE MATRIX
+        System.out.println("Matriz de distâncias:");
+        
+        int fieldWidth = 11; 
+        System.out.printf("%-" + fieldWidth + "s", "");    
+        for (int i = 0; i < n; i++) {
+            System.out.printf("%-" + fieldWidth + "s", airports.get(i).getName());
+        }
+        System.out.println();
+
+        for (int i = 0; i < n; i++) {
+            System.out.printf("%-" + fieldWidth + "s", airports.get(i).getName());
+            for (int j = 0; j < n; j++) {
+                if (dist[i][j] == INF) {
+                    System.out.print(ANSI_PURPLE);
+                    System.out.printf("%-" + fieldWidth + "s", "INF");
+                    System.out.print(ANSI_RESET);
+                } else {
+                    System.out.print(ANSI_CYAN);
+                    System.out.printf("%-" + fieldWidth + "d", dist[i][j]);  // Espaçamento ajustado para números
+                    System.out.print(ANSI_RESET);
+                }
+            }
+            
+            System.out.println();
+        }
         
         // EXECUTING Floyd-Warshall  
         for (int k = 0; k < n; k++) {
@@ -40,7 +67,7 @@ public class FloydWarshall {
         // DISTANCE MATRIX
         System.out.println("Matriz de distâncias:");
         
-        int fieldWidth = 11; 
+        // int fieldWidth = 11; 
         System.out.printf("%-" + fieldWidth + "s", "");    
         for (int i = 0; i < n; i++) {
             System.out.printf("%-" + fieldWidth + "s", airports.get(i).getName());
